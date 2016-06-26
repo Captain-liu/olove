@@ -18,7 +18,7 @@ function oNode:setSize(width,height)
 	-- body
 	self.width = width
 	self.height = height
-	self:setTouchSize{width = 100,height = 20}
+	self:setTouchSize{width = width,height = height}
 end
 
 function oNode:isContainPoint(x,y)

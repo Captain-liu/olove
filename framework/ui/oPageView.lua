@@ -7,6 +7,7 @@ function oPageView:__init( ... )
 	self.pages = {}
 	self.beginx = 0 
 	self.beginy = 0
+	self.pressed = false
 end
 
 function oPageView:__delete( ... )
@@ -39,15 +40,18 @@ end
 function oPageView:mousemoved( x, y, dx, dy, istouch )
 	-- body
 	--btn:mousemoved(x, y, dx, dy, istouch)
---[[	if self:isContainPoint(x,y) then
-		local offsetx = x - self.beginx
-		local offsety = y - self.beginy
-		self.beginx = x
-		self.beginy = y
-		for k,v in pairs(self.pages) do 
-			v:move(offsetx)
+	if self.pressed then 
+		local count = #self.pages
+		if self:isContainPoint(x,y) then
+			local offsetx = x - self.beginx
+			local offsety = y - self.beginy
+			self.beginx = x
+			self.beginy = y
+			for k,v in pairs(self.pages) do 
+				v:move(offsetx)
+			end
 		end
-	end]]
+	end
 end
 
 function oPageView:mousepressed( x, y, button, istouch )
@@ -55,6 +59,7 @@ function oPageView:mousepressed( x, y, button, istouch )
 	self.beginx = x
 	self.beginy = y
 	if self:isContainPoint(x,y) then
+		self.pressed  = true
 		for k,v in pairs(self.pages) do 
 			--v:nextPage()
 		end
@@ -72,4 +77,5 @@ function oPageView:mousereleased( x, y, button, istouch )
 			v:move(offsetx)
 		end
 	end
+	self.pressed = false
 end

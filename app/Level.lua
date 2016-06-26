@@ -15,13 +15,13 @@ function  Level:load( ... )
 	love.graphics.setBackgroundColor(54,172,248)
 	text = oText.New()
 	text:setColor(255,0,0)
-	text:setPosition({x = 200,y = 427})
+	text:setPosition({x = 200,y = 500})
 	text:setText("hello love")
 	uiManager:addUI(text)
 
 	iv = oImageView.New()
 	iv:loadTexture("res/purple.png")
-	iv:setPosition({x = 300,y = 427})
+	iv:setPosition({x = 300,y = 500})
 	uiManager:addUI(iv)
 
 	btn = oButton.New()
@@ -32,10 +32,10 @@ function  Level:load( ... )
 		if eventType == 1 then 
 
 		elseif eventType == 3 then 
-
+			love.window.showMessageBox("tip","pressed ok","error",false)
 		end
 	end)
-	btn:setPosition({x = 240,y = 500})
+	btn:setPosition({x = 240,y = 600})
 	uiManager:addUI(btn)
 
 	opage = oPageView.New()
