@@ -1,0 +1,1 @@
+oRichText = oRichText or BaseClass(oNode)

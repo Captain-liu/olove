@@ -1,0 +1,1 @@
+"# olove"  initgit add README.mdgit commit -m "first commit"git remote add origin https://github.com/Captain-liu/olove.gitgit push -u origin master

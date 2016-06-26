@@ -1,0 +1,1 @@
+oCheckBox = oCheckBox or BaseClass(oNode)

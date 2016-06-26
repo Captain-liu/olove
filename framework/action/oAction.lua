@@ -1,0 +1,1 @@
+oAction = oAction or BaseClass()
