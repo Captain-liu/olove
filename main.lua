@@ -1,25 +1,24 @@
+
 require  "framework/init"
 
 
 require "app/Level"
 local level = nil
 function love.load()
+	uiManager = oUiManager.New()
 	level = Level.New()
 	level:load()
-
-	posx,posy = love.graphics.getWidth()*0.5,love.graphics.getHeight()*0.5
 end
 
 function love.draw()
 	-- body
 	if level then level:draw() end
-	love.graphics.rectangle('line',posx,posy,50,50)
-	love.graphics.print(love.timer.getFPS())
+	uiManager:draw()
 end
 
 function love.update( dt )
 	-- body
-	
+	uiManager:update(dt)
 end
 
 function love.wheelmoved( dx,dy )
@@ -28,16 +27,16 @@ function love.wheelmoved( dx,dy )
 end
 function love.touchpressed( id,x,y,dx,dy,pressure )
 	-- body
-	px = x
+
 end
 
 function love.touchmoved( id, x, y, dx, dy, pressure )
 	-- body
-	px = x
+	
 end
 
 function love.touchreleased( id, x, y, dx, dy, pressure )
-	px = x
+	
 end
 
 function love.keypressed( key )
@@ -46,16 +45,21 @@ end
 
 function love.mousemoved( x, y, dx, dy, istouch )
 	-- body
-	level:mousemoved(x, y, dx, dy, istouch)
+	--level:mousemoved(x, y, dx, dy, istouch)
+
+	uiManager:mousemoved(x, y, button, istouch)
 end
 
 function love.mousepressed( x, y, button, istouch )
 	-- body
-	level:mousepressed(x, y, button, istouch)
+	--level:mousepressed(x, y, button, istouch)
+
+	uiManager:mousepressed(x, y, button, istouch)
 end
 
 function love.mousereleased( x, y, button, istouch )
-	level:mousereleased(x, y, button, istouch)
+	--level:mousereleased(x, y, button, istouch)
+	uiManager:mousereleased(x, y, button, istouch)
 end
 
 function love.run( ... )

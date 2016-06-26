@@ -16,11 +16,14 @@ function  Level:load( ... )
 	text = oText.New()
 	text:setColor(255,0,0)
 	text:setPosition({x = 200,y = 427})
-	text:setText("oImageView")
+	text:setText("hello love")
+	uiManager:addUI(text)
 
 	iv = oImageView.New()
 	iv:loadTexture("res/purple.png")
 	iv:setPosition({x = 300,y = 427})
+	uiManager:addUI(iv)
+
 	btn = oButton.New()
 	btn:loadTextures("res/n.png","res/d.png","res/r.png")
 	btn:setTitleText("OK")
@@ -33,6 +36,18 @@ function  Level:load( ... )
 		end
 	end)
 	btn:setPosition({x = 240,y = 500})
+	uiManager:addUI(btn)
+
+	opage = oPageView.New()
+	opage:setSize(300,400)
+	opage:setPosition({x = 240,y = 240})
+	opage:addPage(oPage.New())
+	opage:addPage(oPage.New())
+	opage:addPage(oPage.New())
+	opage:addPage(oPage.New())
+	opage:addPage(oPage.New())
+	opage:addPage(oPage.New())
+	uiManager:addUI(opage)
 end
 
 

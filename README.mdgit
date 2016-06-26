@@ -1,1 +1,2 @@
-"# olove"  initgit add README.mdgit commit -m "first commit"git remote add origin https://github.com/Captain-liu/olove.gitgit push -u origin master
+-"# olove"  based on love2d 0.10.1
+more about love2d https://love2d.org/

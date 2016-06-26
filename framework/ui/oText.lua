@@ -36,6 +36,14 @@ function oText:draw()
 	love.graphics.setColor(255, 255, 255)
 end
 
+function oText:setAlign( ... )
+	-- body
+end
+
+function oText:parseText(txt)
+	-- body
+end
+
 function oText:__delete( ... )
 	-- body
 end

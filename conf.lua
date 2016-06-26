@@ -4,6 +4,6 @@ function love.conf( t )
 	t.console = true
 	t.window.width = 480
 	t.window.height = 854
-	t.title = "Flip Dot"
+	t.title = "olove"
 	t.window.vsync = true  
 end

@@ -28,11 +28,6 @@ function oButton:loadTextures(pressed,moved,released)
 	self:setTouchSize({width = width,height = height})
 end
 
-function oButton:setTouchSize(size)
-	-- body
-	self.touchSize =  size
-end
-
 function oButton:setPosition( point )
 	-- body
 	self.x  = point.x
@@ -87,17 +82,6 @@ end
 function oButton:mousemoved( x, y, dx, dy, istouch )
 	-- body
 	
-end
-
-function oButton:isContainPoint(x,y)
-	-- body
-	local posx = self.x
-	local posy = self.y
-	local  size = self.touchSize
-	if x > posx + size.width/2 or x <posx - size.width/2 or y > posy + size.height/2 or y < posy -size.height/2 then 
-		return false
-	end
-	return true
 end
 
 function oButton:mousepressed( x, y, button, istouch )
