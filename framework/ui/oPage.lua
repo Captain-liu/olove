@@ -19,15 +19,16 @@ end
 function oPage:draw()
 	-- body
 	if self.width > 0 and self.height >0 then 
-
    	  love.graphics.rectangle("line", self.x-self.width*self.ax,self.y-self.height*self.ay, self.width, self.height)
    end
 end
 
-function oPage:move( offsetx )
+function oPage:move( offsetx ,offsety)
 	-- body
 	self.x = self.x + offsetx
+	self.y = self.y + offsety
 end
+
 function oPage:nextPage( ... )
 	-- body
 	self.next = true

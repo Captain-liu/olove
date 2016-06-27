@@ -19,6 +19,7 @@ function oNode:setSize(width,height)
 	self.width = width
 	self.height = height
 	self:setTouchSize{width = width,height = height}
+	return self
 end
 
 function oNode:isContainPoint(x,y)
@@ -35,23 +36,27 @@ end
 function oNode:setTouchSize(size)
 	-- body
 	self.touchSize =  size
+	return self
 end
 
 function oNode:setAnchorPoint(point)
 	-- body
 	self.ax = point.x
 	self.ay = point.y
+	return self
 end
 
 function oNode:setPosition(point)
 	-- body
 	self.x = point.x
 	self.y = point.y
+	return self
 end
 
 function oNode:setVisible( isVisible )
 	-- body
 	self.visible = isVisible
+	return self
 end
 
 function oNode:getVisible( ... )
