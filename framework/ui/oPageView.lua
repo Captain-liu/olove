@@ -87,7 +87,6 @@ end
 
 function oPageView:scrollAuto()
 	local page = self.pages[self.curPageIdx_]
-
 	if page then
 		local x,y =  page:getPosition()
 		local rx,ry = self:getPosition()
@@ -113,11 +112,11 @@ function oPageView:scrollAuto()
 		elseif self.curPageIdx_ == #self.pages  then 
 			if dis < 0 then 
 				for k,v in pairs(self.pages) do 
-					v:moveAuto(-dis,0)
+				v:moveAuto(-dis,0)
 				end
 			end
 			if dis > 0  then 
-				if   dis > self.width/3 then 
+				if  dis > self.width/3 then 
 					for k,v in pairs(self.pages) do 
 						v:moveAuto(self.width-dis,0)
 					end
@@ -130,7 +129,7 @@ function oPageView:scrollAuto()
 			end
 		else 
 			if dis > 0  then 
-				if   dis > self.width/3 then 
+				if  dis > self.width/3 then 
 					for k,v in pairs(self.pages) do 
 						v:moveAuto(self.width-dis,0)
 					end
@@ -155,8 +154,6 @@ function oPageView:scrollAuto()
 			end
 		end
 	end
-
-	print(self.curPageIdx_)
 end
 
 

@@ -67,11 +67,8 @@ function love.run(dt)
 	if love.math then 
 		love.math.setRandomSeed(os.time())
 	end
-
 	if love.load then love.load(arg) end
-
 	if love.timer then love.timer.step() end
-
 	local dt  = 0;
 	while true do 
 		if love.event then 
