@@ -1,5 +1,5 @@
 
-require "framework/ui/oPage"
+require "framework/ui/oPageItem"
 oPageView = oPageView or BaseClass(oNode)
 
 function oPageView:__init( ... )
@@ -8,6 +8,7 @@ function oPageView:__init( ... )
 	self.beginx = 0 
 	self.beginy = 0
 	self.pressed = false
+	self.curPageIdx_ = 1
 	self.orientation = 0	--	0.level  1.vertical
 end
 
@@ -28,23 +29,30 @@ function oPageView:addPage(page)
 	-- body
 	self.pages[#self.pages+1] = page
 	local length = #self.pages
+	page:setPageIndex(#self.pages)
 	page:setPosition({x = self.x + self.width*(length-1)*(1-self.orientation),y = self.y+self.height*(length-1)*self.orientation})
 end
 
 function oPageView:draw()
    if self.width > 0 and self.height >0 then 
 	local function myStencilFunction()
-	   	love.graphics.rectangle("fill", self.x-self.width*self.ax,self.y-self.height*self.ay, self.width, self.height,20,20,10)
+	   	love.graphics.rectangle("fill", self.x-self.width*self.ax,self.y-self.height*self.ay, self.width, self.height)--,20,20,10
 	end
     love.graphics.stencil(myStencilFunction, "increment", 1)
    -- Only allow rendering on pixels which have a stencil value greater than 0.
     love.graphics.setStencilTest("greater", 0)
 	for k,v in pairs(self.pages) do 
-	  	  v:update()
-	  	  v:draw()
+	  	  v:draw(dt)
 	 end
     love.graphics.setStencilTest()
    end
+end
+
+function oPageView:update(dt)
+	-- body
+	for k,v in pairs(self.pages) do 
+	  	  v:update(dt)
+	 end
 end
 
 function oPageView:mousemoved( x, y, dx, dy, istouch )
@@ -77,6 +85,81 @@ function oPageView:mousepressed( x, y, button, istouch )
 	end
 end
 
+function oPageView:scrollAuto()
+	local page = self.pages[self.curPageIdx_]
+
+	if page then
+		local x,y =  page:getPosition()
+		local rx,ry = self:getPosition()
+		local dis = x-rx
+		if self.curPageIdx_ == 1 then 
+			if dis > 0 then 
+				for k,v in pairs(self.pages) do 
+					v:moveAuto(-dis,0)
+				end
+			end
+			if dis < 0  then
+				if dis < -self.width/3 then 
+					for k,v in pairs(self.pages) do 
+						v:moveAuto(-self.width-dis,0)
+					end
+					self.curPageIdx_ = self.curPageIdx_+1
+				else
+					for k,v in pairs(self.pages) do 
+						v:moveAuto(-dis,0)
+					end
+				end
+			end
+		elseif self.curPageIdx_ == #self.pages  then 
+			if dis < 0 then 
+				for k,v in pairs(self.pages) do 
+					v:moveAuto(-dis,0)
+				end
+			end
+			if dis > 0  then 
+				if   dis > self.width/3 then 
+					for k,v in pairs(self.pages) do 
+						v:moveAuto(self.width-dis,0)
+					end
+					self.curPageIdx_ = self.curPageIdx_-1
+				else
+					for k,v in pairs(self.pages) do 
+						v:moveAuto(-dis,0)
+					end
+				end
+			end
+		else 
+			if dis > 0  then 
+				if   dis > self.width/3 then 
+					for k,v in pairs(self.pages) do 
+						v:moveAuto(self.width-dis,0)
+					end
+					self.curPageIdx_ = self.curPageIdx_-1
+				else
+					for k,v in pairs(self.pages) do 
+						v:moveAuto(-dis,0)
+					end
+				end
+			end
+			if dis < 0  then
+				if dis < -self.width/3 then 
+					for k,v in pairs(self.pages) do 
+						v:moveAuto(-self.width-dis,0)
+					end
+					self.curPageIdx_ = self.curPageIdx_+1
+				else
+					for k,v in pairs(self.pages) do 
+						v:moveAuto(-dis,0)
+					end
+				end
+			end
+		end
+	end
+
+	print(self.curPageIdx_)
+end
+
+
 function oPageView:mousereleased( x, y, button, istouch )
 	--btn:mousereleased(x, y, button, istouch)
 	local offsetx = x - self.beginx
@@ -84,4 +167,6 @@ function oPageView:mousereleased( x, y, button, istouch )
 	self.beginx = x
 	self.beginy = y
 	self.pressed = false
+
+	self:scrollAuto()
 end

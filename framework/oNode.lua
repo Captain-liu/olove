@@ -53,6 +53,11 @@ function oNode:setPosition(point)
 	return self
 end
 
+function oNode:getPosition()
+	-- body
+	return self.x ,self.y
+end
+
 function oNode:setVisible( isVisible )
 	-- body
 	self.visible = isVisible
@@ -72,7 +77,7 @@ function oNode:setColor( ... )
 	self.b = args[3]
 end
 
-function oNode:update( ... )
+function oNode:update(dt )
 	-- body
 end
 

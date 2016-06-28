@@ -62,7 +62,7 @@ function love.mousereleased( x, y, button, istouch )
 	uiManager:mousereleased(x, y, button, istouch)
 end
 
-function love.run( ... )
+function love.run(dt)
 	-- body
 	if love.math then 
 		love.math.setRandomSeed(os.time())

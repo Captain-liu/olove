@@ -41,15 +41,14 @@ function  Level:load( ... )
 	opage = oPageView.New()
 	opage:setSize(300,400)
 	opage:setPosition({x = 240,y = 240})
-	opage:addPage(oPage.New():setSize(200,200))
-	opage:addPage(oPage.New():setSize(200,200))
-	opage:addPage(oPage.New():setSize(200,200))
-	opage:addPage(oPage.New():setSize(200,200))
-	opage:addPage(oPage.New():setSize(200,200))
-	opage:addPage(oPage.New():setSize(200,200))
+	opage:addPage(oPageItem.New():setSize(270,360))
+	opage:addPage(oPageItem.New():setSize(270,360))
+	opage:addPage(oPageItem.New():setSize(270,360))
+	opage:addPage(oPageItem.New():setSize(270,360))
+	opage:addPage(oPageItem.New():setSize(270,360))
+	opage:addPage(oPageItem.New():setSize(270,360))
 	uiManager:addUI(opage)
 end
-
 
 function Level:draw( ... )
 	-- body
