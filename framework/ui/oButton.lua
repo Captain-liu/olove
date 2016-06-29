@@ -3,7 +3,6 @@
 oButton = oButton or BaseClass(oNode)
 
 function oButton:__init()
-
 	self.pressObj = ""
 	self.movedObj = ""
 	self.releasedObj = ""

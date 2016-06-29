@@ -22,17 +22,12 @@ function oPageItem:draw()
    end
 end
 
-function oPageItem:update(dt)
-	-- body
-	if self.oAction then self.oAction:update(dt) end
-end
-
 function oPageItem:setPageIndex( index )
 	-- body
 	self.index = index
 end
 
-function oPageItem:move( offsetx ,offsety)
+function oPageItem:move(offsetx ,offsety)
 	-- body
 	self.x = self.x + offsetx
 	self.y = self.y + offsety
@@ -45,14 +40,6 @@ end
 
 function oPageItem:lastPage( ... )
 	-- body
-end
-
-function oPageItem:moveAuto(offsetx ,offsety)
-	-- body
-	--self.x = self.x + offsetx
-	--self.y = self.y + offsety
-	self.oAction = oAction.New(0.5,offsetx,self)
-	self.oAction:start()
 end
 
 function oPageItem:addChild( ... )

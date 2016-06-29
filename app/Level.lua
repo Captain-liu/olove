@@ -48,19 +48,12 @@ function  Level:load( ... )
 	opage:addPage(oPageItem.New():setSize(270,360))
 	opage:addPage(oPageItem.New():setSize(270,360))
 	uiManager:addUI(opage)
+
+	
 end
 
 function Level:draw( ... )
 	-- body
-	if text then 
-		text:draw()
-	end
-	if iv then 
-		iv:draw()
-	end
-	if btn then 
-		btn:draw()
-	end
 end
 
 function Level:mousemoved( x, y, dx, dy, istouch )

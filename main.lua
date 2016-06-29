@@ -12,7 +12,6 @@ end
 
 function love.draw()
 	-- body
-	if level then level:draw() end
 	uiManager:draw()
 end
 
