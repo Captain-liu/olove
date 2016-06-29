@@ -1,7 +1,7 @@
 oAction = oAction or BaseClass()
 
 function oAction:__init(time_,distance,node)
-	self.totaltime = time_*60
+	self.totaltime = time_*30
 	self.boolaction = false
 	self.node = node
 	self.step = distance/self.totaltime

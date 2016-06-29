@@ -19,7 +19,6 @@ function oPageItem:draw()
 		local width = txt:getWidth()
 		local height = txt:getHeight()
 		love.graphics.draw(txt,self.x-self.width*self.ax,self.y-self.height*self.ay)
-
    end
 end
 
@@ -50,9 +49,8 @@ end
 
 function oPageItem:moveAuto(offsetx ,offsety)
 	-- body
-	self.x = self.x + offsetx
-	self.y = self.y + offsety
-
+	--self.x = self.x + offsetx
+	--self.y = self.y + offsety
 	self.oAction = oAction.New(0.5,offsetx,self)
 	self.oAction:start()
 end
