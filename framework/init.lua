@@ -1,12 +1,12 @@
 --Author  Captain
 --Date 2016.6.25
-require "framework/display"
 require "framework/baseclass"
+require "framework/action/oActionManager"
 require "framework/action/oAction"
 require "framework/ui/oUiManager"
 require "framework/oNode"
---ui
 
+--ui
 require "framework/ui/oImageView"
 require "framework/ui/oText"
 require "framework/ui/oButton"

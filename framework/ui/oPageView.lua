@@ -2,7 +2,7 @@
 require "framework/ui/oPageItem"
 oPageView = oPageView or BaseClass(oNode)
 
-function oPageView:__init( ... )
+function oPageView:load( ... )
 	-- body
 	self.pages = {}
 	self.beginx = 0 

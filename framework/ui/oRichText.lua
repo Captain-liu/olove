@@ -1,6 +1,6 @@
 oRichText = oRichText or BaseClass(oNode)
 
-function oRichText:__init(...)
+function oRichText:load(...)
 
 end
 

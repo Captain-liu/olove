@@ -1,8 +1,7 @@
 --Author  Captain
 --Date 2016.6.25
 oButton = oButton or BaseClass(oNode)
-
-function oButton:__init()
+function oButton:load()
 	self.pressObj = ""
 	self.movedObj = ""
 	self.releasedObj = ""

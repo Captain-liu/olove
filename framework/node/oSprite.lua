@@ -1,7 +1,7 @@
 oSprite = oSprite or BaseClass(oNode)
 
 
-function oSprite:__init( ... )
+function oSprite:load( ... )
 	-- body
 end
 

@@ -1,6 +1,6 @@
 oUiManager = oUiManager or BaseClass()
 
-function oUiManager:__init( ... )
+function oUiManager:load( ... )
 	-- body
 	self.uitable = {}
 end

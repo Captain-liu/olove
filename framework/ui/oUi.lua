@@ -1,6 +1,6 @@
 oUI = oUI or BaseClass(oNode)
 
-function oUI:__init( ... )
+function oUI:load( ... )
 	-- body
 end
 

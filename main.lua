@@ -1,13 +1,12 @@
 
+
 require  "framework/init"
-
-
 require "app/Level"
 local level = nil
 function love.load()
 	uiManager = oUiManager.New()
+	actionManager = oActionManager.New()
 	level = Level.New()
-	level:load()
 end
 
 function love.draw()
@@ -18,6 +17,7 @@ end
 function love.update( dt )
 	-- body
 	uiManager:update(dt)
+	actionManager:update(dt)
 end
 
 function love.wheelmoved( dx,dy )
@@ -45,7 +45,6 @@ end
 function love.mousemoved( x, y, dx, dy, istouch )
 	-- body
 	--level:mousemoved(x, y, dx, dy, istouch)
-
 	uiManager:mousemoved(x, y, button, istouch)
 end
 
@@ -59,6 +58,11 @@ end
 function love.mousereleased( x, y, button, istouch )
 	--level:mousereleased(x, y, button, istouch)
 	uiManager:mousereleased(x, y, button, istouch)
+end
+
+function love.setBackgroundColor( ... )
+	-- body
+	love.graphics.setBackgroundColor(...)
 end
 
 function love.run(dt)

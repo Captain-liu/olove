@@ -2,9 +2,6 @@ Level  = Level or BaseClass()
 local text = nil
 local iv = nil
 local btn = nil
-function Level:__init(...)
-	-- body
-end
 
 function Level:__delete( ... )
 	-- body
@@ -12,17 +9,17 @@ end
 
 function  Level:load( ... )
 	-- body
-	love.graphics.setBackgroundColor(54,172,248)
+	love.setBackgroundColor(54,172,248)
+	iv = oImageView.New()
+	iv:loadTexture("res/logo_bg.jpg")
+	iv:setPosition({x = 360,y = 640})
+	uiManager:addUI(iv)
+
 	text = oText.New()
 	text:setColor(255,0,0)
-	text:setPosition({x = 200,y = 500})
+	text:setPosition({x = 240,y = 400})
 	text:setText("hello love")
 	uiManager:addUI(text)
-
-	iv = oImageView.New()
-	iv:loadTexture("res/purple.png")
-	iv:setPosition({x = 300,y = 500})
-	uiManager:addUI(iv)
 
 	btn = oButton.New()
 	btn:loadTextures("res/n.png","res/d.png","res/r.png")
@@ -33,6 +30,7 @@ function  Level:load( ... )
 
 		elseif eventType == 3 then 
 		--	love.window.showMessageBox("tip","pressed ok","error",false)
+			 oAction.New(100,0.5,text):start()	
 		end
 	end)
 	btn:setPosition({x = 240,y = 600})
@@ -49,7 +47,6 @@ function  Level:load( ... )
 	opage:addPage(oPageItem.New():setSize(270,360))
 	uiManager:addUI(opage)
 
-	
 end
 
 function Level:draw( ... )

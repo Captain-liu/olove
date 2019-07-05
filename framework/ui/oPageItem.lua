@@ -1,6 +1,6 @@
 oPageItem = oPageItem or BaseClass(oNode)
 
-function oPageItem:__init( ... )
+function oPageItem:load( ... )
 	-- body
 
 end

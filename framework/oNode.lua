@@ -1,6 +1,6 @@
 oNode = oNode or BaseClass()
 
-function oNode:__init( ... )
+function oNode:load( ... )
 	-- body
 	self.ax = 0.5
 	self.ay = 0.5
@@ -12,6 +12,7 @@ function oNode:__init( ... )
 	self.visible = true
 	self.width = 0
 	self.height = 0
+	self.graphic = love.graphic
 end
 
 function oNode:setSize(width,height)
@@ -64,6 +65,11 @@ function oNode:setVisible( isVisible )
 	return self
 end
 
+function oNode:move(x,y)
+	-- body
+	self.x=self.x+x
+	self.y=self.y+y
+end
 function oNode:getVisible( ... )
 	-- body
 	return visible
