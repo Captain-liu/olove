@@ -1,5 +1,3 @@
-
-
 require  "framework/init"
 require "app/Level"
 local level = nil
@@ -12,6 +10,7 @@ end
 function love.draw()
 	-- body
 	uiManager:draw()
+	--love.graphics.print("fps:"..tostring(love.timer.getDelta()),10,10)
 end
 
 function love.update( dt )
@@ -98,6 +97,6 @@ function love.run(dt)
 			if love.draw then love.draw() end
 			love.graphics.present()
 		end
-		if love.timer then love.timer.sleep(0.001) end
+		--if love.timer then love.timer.sleep(0.001) end
 	end
 end

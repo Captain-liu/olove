@@ -10,6 +10,11 @@ function oText:load( ... )
 	return self
 end
 
+function oText:setScale( s )
+	-- body
+	self.scale = s
+end
+
 function oText:setText(txt)
 	-- body
 	self.txt = txt
@@ -45,7 +50,7 @@ function oText:draw()
 	if not self.visible then end
 	local txt = self:getDrawText()
 	love.graphics.setColor(self.r,self.g, self.b)
-	love.graphics.draw(txt,self.x-self.width*self.ax,self.y-self.height*self.ay)
+	love.graphics.draw(txt,self.x-self.width*self.ax*self.scale,self.y-self.height*self.ay*self.scale,0,self.scale,self.scale)
 	love.graphics.setColor(255, 255, 255)
 end
 

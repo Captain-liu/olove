@@ -18,7 +18,7 @@ function oPageItem:draw()
 		local txt = love.graphics.newText(font,""..self.index)
 		local width = txt:getWidth()
 		local height = txt:getHeight()
-		love.graphics.draw(txt,self.x-self.width*self.ax,self.y-self.height*self.ay)
+		love.graphics.draw(txt,self.x-self.width*self.ax,self.y-self.height*self.ay,0,self.scale,self.scale)
    end
 end
 

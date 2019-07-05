@@ -2,7 +2,7 @@ Level  = Level or BaseClass()
 local text = nil
 local iv = nil
 local btn = nil
-
+local inputText = nil
 function Level:__delete( ... )
 	-- body
 end
@@ -13,12 +13,17 @@ function  Level:load( ... )
 	iv = oImageView.new()
 	iv:loadTexture("res/logo_bg.jpg")
 	iv:setPosition({x = 360,y = 640})
-	--uiManager:addUI(iv)
+	uiManager:addUI(iv)
 
+	inputText = oTextInput.new()
+	inputText:setPosition({x = 240,y = 200})
+	uiManager:addUI(inputText)
 	text = oText.new()
+	text:setScale(3)
 	text:setColor(255,0,0)
 	text:setPosition({x = 240,y = 400})
-	text:setText("hello love")
+	local str = require("app/data/cfg").name
+	text:setText(str)
 	uiManager:addUI(text)
 
 	btn = oButton.new()

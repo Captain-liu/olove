@@ -17,12 +17,10 @@ end
 function oImageView:draw( ... )
 	-- body
 	if not self.visible then end
-
 	local  image = self.image
 	local width = image:getWidth()
 	local height = image:getHeight()
-	love.graphics.draw(image,self.x-width*self.ax,self.y-height*self.ay)
-	
+	love.graphics.draw(image,self.x-width*self.ax,self.y-height*self.ay,0,self.scale,self.scale)
 end
 
 function oImageView:getSize( ... )

@@ -56,14 +56,14 @@ function oButton:draw(...)
 		local image = self.pressObj
 		local width = image:getWidth()
 		local height = image:getHeight()
-		love.graphics.draw(image,self.x-width*self.ax,self.y-height*self.ay)
+		love.graphics.draw(image,self.x-width*self.ax*self.scale,self.y-height*self.ay*self.scale,0,self.scale,self.scale)
 	elseif self.status == 2 then
 
 	elseif self.status == 3 then 
 		local image = self.releasedObj
 		local width = image:getWidth()
 		local height = image:getHeight()
-		love.graphics.draw(image,self.x-width*self.ax,self.y-height*self.ay)
+		love.graphics.draw(image,self.x-width*self.ax*self.scale,self.y-height*self.ay*self.scale,0,self.scale,self.scale)
 	end
 	if self.oText then 
 		self.oText:draw()

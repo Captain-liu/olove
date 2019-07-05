@@ -13,6 +13,7 @@ function oNode:load( ... )
 	self.width = 0
 	self.height = 0
 	self.graphic = love.graphic
+	self.scale =1
 end
 
 function oNode:setSize(width,height)
@@ -28,7 +29,7 @@ function oNode:isContainPoint(x,y)
 	local posx = self.x
 	local posy = self.y
 	local  size = self.touchSize
-	if x > posx + size.width/2 or x <posx - size.width/2 or y > posy + size.height/2 or y < posy -size.height/2 then 
+	if x > posx + self.scale*size.width/2 or x <posx - self.scale*size.width/2 or y > posy + self.scale*size.height/2 or y < posy -self.scale*size.height/2 then 
 		return false
 	end
 	return true

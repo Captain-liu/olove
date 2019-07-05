@@ -5,5 +5,6 @@ function love.conf( t )
 	t.window.width = 480
 	t.window.height = 800
 	t.title = "olove"
-	t.window.vsync = true  
+	t.window.vsync = true 
+	t.window.highdpi = true
 end
