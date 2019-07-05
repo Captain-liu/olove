@@ -30,7 +30,7 @@ function  Level:load( ... )
 
 		elseif eventType == 3 then 
 		--	love.window.showMessageBox("tip","pressed ok","error",false)
-			 oAction.New(100,0.5,text):start()	
+			oAction.New(0.5,100,text):start()	
 		end
 	end)
 	btn:setPosition({x = 240,y = 600})

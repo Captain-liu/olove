@@ -19,7 +19,7 @@ function oAction:update(dt)
 		if self.totaltime < 0 then
 			self.boolaction = false
 		else
-			self.node:move(0,1)
+			self.node:move(0,self.step)
 		end
 	end
 end
