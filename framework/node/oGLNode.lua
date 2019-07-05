@@ -1,6 +1,6 @@
 oGLNode = oGLNode or BaseClass(oNode)
 
-function oGLNode:__init( ... )
+function oGLNode:load( ... )
 	-- body
 end
 

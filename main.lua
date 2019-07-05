@@ -4,9 +4,9 @@ require  "framework/init"
 require "app/Level"
 local level = nil
 function love.load()
-	uiManager = oUiManager.New()
-	actionManager = oActionManager.New()
-	level = Level.New()
+	uiManager = oUiManager.new()
+	actionManager = oActionManager.new()
+	level = Level.new()
 end
 
 function love.draw()

@@ -3,7 +3,7 @@
 _state_id = _state_id or 0
 oGameTFSM = oGameTFSM or BaseClass()
 
-function oGameTFSM:__init()
+function oGameTFSM:load()
    -- if GameTFSM.Instance then
    --     error("Attempt to create a GameTFSM twice!")
   --  end

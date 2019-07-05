@@ -11,7 +11,7 @@ function BaseClass(super)
     class_type.load = false
     class_type.__delete = false
     class_type.super = super
-    class_type.New = function(...)
+    class_type.new = function(...)
         -- 生成一个类对象
         local obj = {}
         obj._class_type = class_type

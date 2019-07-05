@@ -5,7 +5,7 @@ _inner_event_system_id_count = _inner_event_system_id_count or 0
 
 oEventSystem = oEventSystem or BaseClass()
 
-function oEventSystem:__init()
+function oEventSystem:load()
     _inner_event_system_id_count = _inner_event_system_id_count + 1
     self.system_id = _inner_event_system_id_count
     _inner_event_system_list[self.system_id] = self
@@ -16,7 +16,7 @@ function oEventSystem:__init()
 end
 
 function oEventSystem:CreateEvent(event_id)
-    self.event_list[event_id] = oEvent.New(event_id)
+    self.event_list[event_id] = oEvent.new(event_id)
 end
 
 function oEventSystem:Bind(event_id, event_func)

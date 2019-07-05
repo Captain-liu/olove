@@ -6,7 +6,7 @@ function oButton:load()
 	self.movedObj = ""
 	self.releasedObj = ""
 	self.status = 1
-	local text = oText.New()
+	local text = oText.new()
 	self.oText = text
 	text:setColor(255,0,0)
 	text:setPosition({x = self.x,y = self.y})
